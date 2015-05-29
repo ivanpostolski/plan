@@ -1,0 +1,57 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[paper=a4paper, left=3cm, right=3cm, bottom=2.5cm, top=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{csquotes}
+\usepackage{pdfpages}
+\pdfinfo{%
+  /Title    ()
+  /Author   ()
+  /Creator  ()
+  /Producer ()
+  /Subject  ()
+  /Keywords ()
+}
+
+\hypersetup{pdfauthor={Author},%
+            pdftitle={Your Title},%
+            pdfsubject={Whatever},%
+            pdfkeywords={one, two},%
+            pdfproducer={LaTeX},%
+            pdfcreator={pdfLaTeX}
+}
+
+
+% \makeindex
+
+\title{An\'alisis y recuperaci\'on de arquitecturas de software}
+\date{\today}
+\author{}
+
+\begin{document}
+\maketitle
+\section*{Objetivos}
+\paragraph{}
+La reconstrucción arquitectónica requiere identificar elementos del código , sus vínculos y dependencias para luego realizar diferentes tipo de agrupamientos y comprender los vínculos entre estas abstracciones. Por su parte, estos agrupamientos pueden usar distintos tipos de información y principios de mapeo: estructural, de configuración, información de negocio, de la aplicación, del dominio tecnológico, etc. \cite{neno}. 
+\paragraph{}
+En la visión del proyecto hay un especial interés por detectar eventuales flujos de actividad entre entidades run-time recuperadas a partir del código. Eso implica, que será importante descubrir vínculos de control entre entidades de código. La construcción clásica b\'asica que aborda el análisis estático de control es el denominado Call Graph, este grafo se encarga de aproximar la relación de invocación entre los métodos que constituyen al programa. Existen diversas técnicas para obtener este tipo de grafo y las mismas deben afrontar los problemas acarreados por el polimorfismo y el “dispatch” dinámico de métodos para poder deducir estáticamente los métodos invocados. Sumados a los problemas de tratamiento de otras vinculaciones dinámicas no triviales y el foco de análisis en el código propio de la aplicación, explican porqué el resultado de estas técnicas es habitualmente aproximado. 
+\paragraph{}
+Por otro lado, las aplicaciones modernas están construidas sobre frameworks que complejizan aún más el descubrimiento de relaciones en el c\'odigo debido a la inyección dinámica de las mismas y el agregado impl\'icito de puntos de entrada en las aplicaciones \cite{ff}.
+\paragraph{}
+Este documento se concentra en los resultados de experimentos iniciales de la aplicación de herramientas de uso abierto para la confecci\'on de call graphs y la construcción de una mímica parcial del framework para resolver los puntos mencionados. El segundo cap\'itulo explorar\'a herramientas y algoritmos de call graph implementados para elaborar algunas preguntas y respuestas sobre la performance de los mismos en aplicaciones de tamaño reducido y su mayor o menor precisión para capturar flujos de actividad.
+\paragraph{}
+El tercer cap\'itulo discutir\'a el problema del cierre de la aplicación por parte de un código “main” que simula al framework como forma de atacar los desafíos mencionados de inyección de relaciones y puntos de entrada. Adem\'as pondr\'a a prueba algunos algoritmos estudiados en el primer capitulo pero ahora sobre aplicaciones de tama\~no real.  
+\paragraph{}
+Finalmente, las conclusiones, además de resumir algunos de los resultados de los experimentos anteriores,  también hacen menci\'on del primer acercamiento hacia el agrupamiento de entidades mediante técnicas de modelado de tópicos, siendo esta \'ultima una posible forma de agrupamiento basada en la ontología del negocio.  El documento finaliza con los próximos pasos sugeridos.
+\section*{Antecedentes}
+\section*{Actividades y Metodolog\'ia}
+\section*{Factibilidad}
+\section*{Referencias}
+
+
+\end{document}
